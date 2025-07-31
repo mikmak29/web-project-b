@@ -1,11 +1,15 @@
-import { v4 as myuuid } from "https://jspm.dev/uuid";
+import { generateID } from "../components/id/id.js";
 import { displayCountingNumber, displayId, displayData } from "../components/htmlElements/element.js";
 import { generateButton, submitButton, checkDataButton } from "../components/htmlElements/button.js";
 
 const data = [];
 
 const storeData = (id) => {
-    return data.push({id});
+
+    const newObject = {id: id}
+    data.push(newObject)
+
+    return data;
 }
 
 const generateButtonSetup = () => {
@@ -21,7 +25,7 @@ const generateButtonSetup = () => {
         if (countNumber <= 0) {
             clearInterval(countDownNumber);
             displayCountingNumber.textContent = "";
-            displayId.textContent = myuuid();
+            displayId.textContent = generateID;
         }
     }, 1000)
 };
@@ -36,13 +40,17 @@ const submitButtonSetup = () => {
         storeData(displayId.textContent);
         displayId.textContent = "";
     }
-    
 }
 
 submitButton.addEventListener("click", submitButtonSetup)
 
 const checkDataButtonSetup = () => {
-    console.log(...data);
+
+    if (data.length <= 0) {
+        alert("Akimkim ko, submit mo po muna")
+    } else {
+        displayData.textContent = data[0].id;
+    }
 }
 
 checkDataButton.addEventListener("click", checkDataButtonSetup)

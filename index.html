@@ -7,30 +7,27 @@
     <title>ID Generator</title>
 
     <link rel="stylesheet" href="./dist/output.css">
-    <!-- <link rel="icon" href=""> -->
+    <link rel="icon" href="./images/favicon/akimkim.jpg">
 </head>
 
 <body>
     <section class="min-[320px] w-screen h-screen px-3 flex justify-center items-center">
-        <div class="max-w-[625px] h-auto mx-auto p-4 text-center">
+        <div class="max-w-[625px] h-auto mx-auto p-8 text-center">
             <h1 class="text-4xl font-inter">Generate ID</h1>
-            <div class="mt-8">
-                <div class="flex flex-col items-center gap-6">
-                    <h1 id="displayCountingNumber" class="text-xl font-inter font-bold"></h1>
-                    <h1 id="displayId" class="w-[150px] text-xl font-inter font-bold truncate"></h1>
-                    <!-- <input id="displayId" class="w-20 mx-auto inline-block truncate text-xl font-inter outline-none"
-                        type="text" readonly> -->
+            <div class="h-[350px] pt-8">
+                <div class="h-[60px] flex flex-col items-center gap-8">
+                    <h1 id="displayCountingNumber" class="text-xl font-inter font-bold leading-none"></h1>
+                    <h1 id="displayId" class="w-[150px] text-xl font-inter font-bold truncate leading-none"></h1>
                 </div>
                 <div class="flex flex-col items-center">
                     <button id="generateButton" class="button-style">Generate
-                        Token</button>
+                        ID</button>
                     <button id="submitButton" class="button-style">Submit
                         Button</button>
                     <button id="checkDataButton" class="button-style">Check Data</button>
                 </div>
-                <h1 class="displayData"></h1>
+                <h1 id="displayData" class="pt-10 font-inter leading-none"></h1>
             </div>
-        </div>
     </section>
     <script type="module" src="./src/main/main.js"></script>
 </body>
