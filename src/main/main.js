@@ -1,4 +1,4 @@
-import { generateID } from "../components/id/id.js";
+import { v4 as myuuid } from "https://jspm.dev/uuid";
 import { displayCountingNumber, displayId, displayData } from "../components/htmlElements/element.js";
 import { generateButton, submitButton, checkDataButton } from "../components/htmlElements/button.js";
 
@@ -25,7 +25,7 @@ const generateButtonSetup = () => {
         if (countNumber <= 0) {
             clearInterval(countDownNumber);
             displayCountingNumber.textContent = "";
-            displayId.textContent = generateID;
+            displayId.textContent = myuuid();
         }
     }, 1000)
 };
